@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');     /* imports custom font */
+
+/* 
+The box-sizing property allows us to include the padding and border in an element's total width and height.
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height:
+*/
+* {
+    box-sizing: border-box;     
+}
+
+body {
+    background-color: #0f2245b0;
+    background-image: linear-gradient(90deg, #031331ca 0%, #1b1f3b95 46%, #717594e4 100%);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+}
+
+header {
+    background-color: #1c386b40;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.search {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    margin-right: 2rem;
+    width: 300px;
+    outline: none;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid #0f2245;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: white;
+}
+
+.search::placeholder {
+    color: #8b9bbafb;
+}
+
+.movie {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 3rem;
+}
+
+.img-container {
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px black;
+    width: 300px;
+    height: 450px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: 450px;
+}
+
+.rating {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 2px 30px #000000;
+    background-color: #e0a309;
+    padding: 0.5rem;
+    bottom: 2rem;
+    right: -1.2rem;
+    transition: background-color 0.7s;
+}
+
+.movie-info {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    width: 300px;
+    height: 100%;
+    max-height: 250px;
+}
+
+.movie-info h3 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 270px;
+    margin: 0;
+}
+
+.movie-info span {
+    color: #ffffff96;
+}
+
+.overview {
+    background-color: #000000d4;
+    color: white;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 450px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    overflow: auto;     /* if overview description is too long adds a scroll */
+    max-height: 100%;
+}
+
+.movie:hover .overview {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.movie:hover .rating {
+    background-color: #000000d4;
+    transition: background-color 0.2s;
+}
+
+.overview h4 {
+    margin: 0;
+}
+
